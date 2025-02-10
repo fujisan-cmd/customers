@@ -33,20 +33,20 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          python -m antenv antenv
+          source antenv/bin/activate
       
       - name: Install dependencies
         run: |
-          source venv/bin/activate
+          source antenv/bin/activate
           pip install -r backend/requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
         run: |
-          source venv/bin/activate
-          zip -r release.zip ./* -x venv/**\*
+          source antenv/bin/activate
+          zip -r release.zip ./* -x antenv/**\*
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
@@ -54,7 +54,7 @@ jobs:
           name: python-app
           path: |
             release.zip
-            !venv/
+            !antenv/
 
   deploy:
     runs-on: ubuntu-latest
