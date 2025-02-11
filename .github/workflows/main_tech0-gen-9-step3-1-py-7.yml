@@ -85,3 +85,4 @@ jobs:
           app-name: 'tech0-gen-9-step3-1-py-7'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_33F1FA6B9D7B4765B61A4FE5F89C0F73 }}
+          package: './backend'
