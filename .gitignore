@@ -3,4 +3,5 @@
 *.pem
 
 # node_modulesはpackage.jsonがあればいいので不要
-frontend/node_modules/
+# frontend/node_modules/
+# frontend/
